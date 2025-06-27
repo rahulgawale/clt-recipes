@@ -1,0 +1,142 @@
+<template>
+  <div class="order-container">
+    <!-- Header Section -->
+    <div class="order-header">
+      <div class="order-title-row">
+        <div class="order-title">
+          <h2 class="slds-text-heading_medium">Order {order.orderId}</h2>
+          <p class="order-date-subtext">{formattedOrderDate}</p>
+        </div>
+        <div class="order-total">
+          <span class="total-text">Total ${order.totalAmount}</span>
+        </div>
+      </div>
+      <div class="order-status-section">
+        <div class="status-tabs">
+          <span class={itemsClass} data-tab="items" onclick={handleStatusChange}
+            >Items</span
+          >
+          <span
+            class={shipmentsClass}
+            data-tab="shipments"
+            onclick={handleStatusChange}
+            >Shipments</span
+          >
+          <span
+            class={customerClass}
+            data-tab="customer"
+            onclick={handleStatusChange}
+            >Customer Info</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Order ID Section -->
+    <div class="order-id-section">
+      <lightning-icon
+        icon-name="utility:package"
+        size="small"
+        class="order-icon"
+      ></lightning-icon>
+      <span class="order-id">{order.orderId}</span>
+      <lightning-badge
+        label={order.orderStatus}
+        class="order-status-badge"
+      ></lightning-badge>
+    </div>
+
+    <!-- Items Section -->
+    <template if:true={isItemsTab}>
+      <div class="items-container">
+        <template for:each={order.items} for:item="item">
+          <div key={item.itemId} class="item-card">
+            <div class="item-image-container">
+              <img
+                src={item.imageUrl}
+                alt={item.productName}
+                class="item-image"
+              />
+            </div>
+            <div class="item-details">
+              <div class="item-info">
+                <div class="item-header">
+                  <h3 class="item-name">{item.productName}</h3>
+                  <span class="item-status-tag {item.status}"
+                    >{item.status}</span
+                  >
+                </div>
+                <div class="item-meta">
+                  <span class="item-sku">SKU: {item.sku}</span>
+                  <span class="item-quantity">Qty: {item.quantity}</span>
+                </div>
+              </div>
+              <div class="item-price">
+                <lightning-formatted-number
+                  value={item.unitPrice}
+                  currency-code={order.currency}
+                  class="price-text"
+                ></lightning-formatted-number>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+    </template>
+
+    <!-- Shipments Section -->
+    <template if:true={isShipmentsTab}>
+      <div class="shipments-container">
+        <div class="shipment-card">
+          <div class="shipment-info">
+            <h3 class="shipment-title">Shipment Details</h3>
+            <div class="shipment-details">
+              <p><strong>Carrier:</strong> {order.shipment.carrier}</p>
+              <p>
+                <strong>Tracking Number:</strong>
+                {order.shipment.trackingNumber}
+              </p>
+              <p>
+                <strong>Shipping Method:</strong>
+                {order.shipment.shippingMethod}
+              </p>
+              <p>
+                <strong>Shipping Cost:</strong>
+                <lightning-formatted-number
+                  value={order.shipment.shippingCost}
+                  currency-code={order.currency}
+                ></lightning-formatted-number>
+              </p>
+              <p>
+                <strong>Estimated Delivery:</strong>
+                {order.shipment.estimatedDelivery}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <!-- Customer Information Section -->
+    <template if:true={isCustomerTab}>
+      <div class="customer-container">
+        <div class="customer-card">
+          <h3 class="customer-title">Customer Information</h3>
+          <div class="customer-details">
+            <p>
+              <strong>Name:</strong> {order.customer.firstName}
+              {order.customer.lastName}
+            </p>
+            <p><strong>Email:</strong> {order.customer.email}</p>
+            <p><strong>Phone:</strong> {order.customer.phone}</p>
+            <p>
+              <strong>Address:</strong> {order.customer.address.street},
+              {order.customer.address.city}, {order.customer.address.state}
+              {order.customer.address.zipCode}
+            </p>
+          </div>
+        </div>
+      </div>
+    </template>
+  </div>
+</template>

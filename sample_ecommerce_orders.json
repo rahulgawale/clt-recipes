@@ -1,0 +1,544 @@
+{
+  "orders": [
+    {
+      "orderId": "ORD-2025-001",
+      "orderDate": "2025-06-15T10:30:00Z",
+      "orderStatus": "shipped",
+      "totalAmount": 99.97,
+      "currency": "USD",
+      "customer": {
+        "customerId": "CUST-001",
+        "firstName": "John",
+        "lastName": "Smith",
+        "email": "john.smith@email.com",
+        "phone": "+1-555-0123",
+        "address": {
+          "street": "123 Main Street",
+          "city": "New York",
+          "state": "NY",
+          "zipCode": "10001",
+          "country": "USA"
+        }
+      },
+      "items": [
+        {
+          "itemId": "ITEM-001",
+          "productName": "Performance Athletic T-Shirt",
+          "sku": "PTS-2025-001",
+          "quantity": 1,
+          "unitPrice": 39.99,
+          "totalPrice": 39.99,
+          "category": "Sportswear",
+          "imageUrl": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400"
+        },
+        {
+          "itemId": "ITEM-002",
+          "productName": "Compression Sports Shorts",
+          "sku": "CSS-2025-002",
+          "quantity": 2,
+          "unitPrice": 29.99,
+          "totalPrice": 59.98,
+          "category": "Sportswear",
+          "imageUrl": "https://images.unsplash.com/photo-1622445275463-afa2ab738c34?w=400"
+        }
+      ],
+      "shipment": {
+        "shipmentId": "SHIP-001",
+        "carrier": "FedEx",
+        "trackingNumber": "1234567890123456",
+        "shippingMethod": "Standard",
+        "shippingCost": 9.99,
+        "estimatedDelivery": "2025-06-20T18:00:00Z",
+        "shippingAddress": {
+          "street": "123 Main Street",
+          "city": "New York",
+          "state": "NY",
+          "zipCode": "10001",
+          "country": "USA"
+        }
+      }
+    },
+    {
+      "orderId": "ORD-2025-002",
+      "orderDate": "2025-06-16T14:15:00Z",
+      "orderStatus": "processing",
+      "totalAmount": 134.98,
+      "currency": "USD",
+      "customer": {
+        "customerId": "CUST-002",
+        "firstName": "Sarah",
+        "lastName": "Johnson",
+        "email": "sarah.johnson@email.com",
+        "phone": "+1-555-0456",
+        "address": {
+          "street": "456 Oak Avenue",
+          "city": "Los Angeles",
+          "state": "CA",
+          "zipCode": "90210",
+          "country": "USA"
+        }
+      },
+      "items": [
+        {
+          "itemId": "ITEM-003",
+          "productName": "Training Track Jacket",
+          "sku": "TTJ-2025-001",
+          "quantity": 1,
+          "unitPrice": 79.99,
+          "totalPrice": 79.99,
+          "category": "Sportswear",
+          "imageUrl": "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400"
+        },
+        {
+          "itemId": "ITEM-004",
+          "productName": "Athletic Track Pants",
+          "sku": "ATP-2025-001",
+          "quantity": 1,
+          "unitPrice": 54.99,
+          "totalPrice": 54.99,
+          "category": "Sportswear",
+          "imageUrl": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400"
+        }
+      ],
+      "shipment": {
+        "shipmentId": "SHIP-002",
+        "carrier": "UPS",
+        "trackingNumber": "1Z999AA1234567890",
+        "shippingMethod": "Express",
+        "shippingCost": 19.99,
+        "estimatedDelivery": "2025-06-18T16:00:00Z",
+        "shippingAddress": {
+          "street": "456 Oak Avenue",
+          "city": "Los Angeles",
+          "state": "CA",
+          "zipCode": "90210",
+          "country": "USA"
+        }
+      }
+    },
+    {
+      "orderId": "ORD-2025-003",
+      "orderDate": "2025-06-17T09:45:00Z",
+      "orderStatus": "delivered",
+      "totalAmount": 129.99,
+      "currency": "USD",
+      "customer": {
+        "customerId": "CUST-003",
+        "firstName": "Michael",
+        "lastName": "Brown",
+        "email": "michael.brown@email.com",
+        "phone": "+1-555-0789",
+        "address": {
+          "street": "789 Pine Street",
+          "city": "Chicago",
+          "state": "IL",
+          "zipCode": "60601",
+          "country": "USA"
+        }
+      },
+      "items": [
+        {
+          "itemId": "ITEM-005",
+          "productName": "Professional Running Shoes",
+          "sku": "PRS-2025-001",
+          "quantity": 1,
+          "unitPrice": 129.99,
+          "totalPrice": 129.99,
+          "category": "Sports Footwear",
+          "imageUrl": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400"
+        }
+      ],
+      "shipment": {
+        "shipmentId": "SHIP-003",
+        "carrier": "USPS",
+        "trackingNumber": "9405511206213123456789",
+        "shippingMethod": "Priority",
+        "shippingCost": 12.99,
+        "estimatedDelivery": "2025-06-19T17:00:00Z",
+        "shippingAddress": {
+          "street": "789 Pine Street",
+          "city": "Chicago",
+          "state": "IL",
+          "zipCode": "60601",
+          "country": "USA"
+        }
+      }
+    },
+    {
+      "orderId": "ORD-2025-004",
+      "orderDate": "2025-06-18T16:20:00Z",
+      "orderStatus": "pending",
+      "totalAmount": 89.98,
+      "currency": "USD",
+      "customer": {
+        "customerId": "CUST-004",
+        "firstName": "Emily",
+        "lastName": "Davis",
+        "email": "emily.davis@email.com",
+        "phone": "+1-555-0321",
+        "address": {
+          "street": "321 Elm Drive",
+          "city": "Miami",
+          "state": "FL",
+          "zipCode": "33101",
+          "country": "USA"
+        }
+      },
+      "items": [
+        {
+          "itemId": "ITEM-006",
+          "productName": "Premium Yoga Mat",
+          "sku": "PYM-2025-001",
+          "quantity": 2,
+          "unitPrice": 39.99,
+          "totalPrice": 79.98,
+          "category": "Fitness Equipment",
+          "imageUrl": "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=400"
+        }
+      ],
+      "shipment": {
+        "shipmentId": "SHIP-004",
+        "carrier": "FedEx",
+        "trackingNumber": "7777777777777777",
+        "shippingMethod": "Ground",
+        "shippingCost": 7.99,
+        "estimatedDelivery": "2025-06-23T18:00:00Z",
+        "shippingAddress": {
+          "street": "321 Elm Drive",
+          "city": "Miami",
+          "state": "FL",
+          "zipCode": "33101",
+          "country": "USA"
+        }
+      }
+    },
+    {
+      "orderId": "ORD-2025-005",
+      "orderDate": "2025-06-19T11:10:00Z",
+      "orderStatus": "shipped",
+      "totalAmount": 89.99,
+      "currency": "USD",
+      "customer": {
+        "customerId": "CUST-005",
+        "firstName": "David",
+        "lastName": "Wilson",
+        "email": "david.wilson@email.com",
+        "phone": "+1-555-0654",
+        "address": {
+          "street": "654 Maple Lane",
+          "city": "Seattle",
+          "state": "WA",
+          "zipCode": "98101",
+          "country": "USA"
+        }
+      },
+      "items": [
+        {
+          "itemId": "ITEM-007",
+          "productName": "Sports Hoodie",
+          "sku": "SH-2025-001",
+          "quantity": 1,
+          "unitPrice": 89.99,
+          "totalPrice": 89.99,
+          "category": "Sportswear",
+          "imageUrl": "https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=400"
+        }
+      ],
+      "shipment": {
+        "shipmentId": "SHIP-005",
+        "carrier": "UPS",
+        "trackingNumber": "1Z999AA9876543210",
+        "shippingMethod": "Next Day Air",
+        "shippingCost": 29.99,
+        "estimatedDelivery": "2025-06-20T12:00:00Z",
+        "shippingAddress": {
+          "street": "654 Maple Lane",
+          "city": "Seattle",
+          "state": "WA",
+          "zipCode": "98101",
+          "country": "USA"
+        }
+      }
+    },
+    {
+      "orderId": "ORD-2025-006",
+      "orderDate": "2025-06-20T13:30:00Z",
+      "orderStatus": "processing",
+      "totalAmount": 59.98,
+      "currency": "USD",
+      "customer": {
+        "customerId": "CUST-006",
+        "firstName": "Lisa",
+        "lastName": "Garcia",
+        "email": "lisa.garcia@email.com",
+        "phone": "+1-555-0987",
+        "address": {
+          "street": "987 Cedar Court",
+          "city": "Phoenix",
+          "state": "AZ",
+          "zipCode": "85001",
+          "country": "USA"
+        }
+      },
+      "items": [
+        {
+          "itemId": "ITEM-008",
+          "productName": "Moisture-Wicking Sports Tank Top",
+          "sku": "MWST-2025-001",
+          "quantity": 1,
+          "unitPrice": 34.99,
+          "totalPrice": 34.99,
+          "category": "Sportswear",
+          "imageUrl": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400"
+        },
+        {
+          "itemId": "ITEM-009",
+          "productName": "Sports Water Bottle",
+          "sku": "SWB-2025-001",
+          "quantity": 1,
+          "unitPrice": 24.99,
+          "totalPrice": 24.99,
+          "category": "Sports Accessories",
+          "imageUrl": "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=400"
+        }
+      ],
+      "shipment": {
+        "shipmentId": "SHIP-006",
+        "carrier": "FedEx",
+        "trackingNumber": "8888888888888888",
+        "shippingMethod": "Standard",
+        "shippingCost": 12.99,
+        "estimatedDelivery": "2025-06-25T18:00:00Z",
+        "shippingAddress": {
+          "street": "987 Cedar Court",
+          "city": "Phoenix",
+          "state": "AZ",
+          "zipCode": "85001",
+          "country": "USA"
+        }
+      }
+    },
+    {
+      "orderId": "ORD-2025-007",
+      "orderDate": "2025-06-21T08:45:00Z",
+      "orderStatus": "delivered",
+      "totalAmount": 57.98,
+      "currency": "USD",
+      "customer": {
+        "customerId": "CUST-007",
+        "firstName": "Robert",
+        "lastName": "Martinez",
+        "email": "robert.martinez@email.com",
+        "phone": "+1-555-0147",
+        "address": {
+          "street": "147 Birch Boulevard",
+          "city": "Denver",
+          "state": "CO",
+          "zipCode": "80201",
+          "country": "USA"
+        }
+      },
+      "items": [
+        {
+          "itemId": "ITEM-010",
+          "productName": "Basketball Shorts",
+          "sku": "BS-2025-001",
+          "quantity": 1,
+          "unitPrice": 44.99,
+          "totalPrice": 44.99,
+          "category": "Sportswear",
+          "imageUrl": "https://images.unsplash.com/photo-1622445275463-afa2ab738c34?w=400"
+        },
+        {
+          "itemId": "ITEM-011",
+          "productName": "Athletic Headband",
+          "sku": "AH-2025-001",
+          "quantity": 1,
+          "unitPrice": 12.99,
+          "totalPrice": 12.99,
+          "category": "Sports Accessories",
+          "imageUrl": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400"
+        }
+      ],
+      "shipment": {
+        "shipmentId": "SHIP-007",
+        "carrier": "USPS",
+        "trackingNumber": "9405511206213987654321",
+        "shippingMethod": "Priority Express",
+        "shippingCost": 24.99,
+        "estimatedDelivery": "2025-06-22T15:00:00Z",
+        "shippingAddress": {
+          "street": "147 Birch Boulevard",
+          "city": "Denver",
+          "state": "CO",
+          "zipCode": "80201",
+          "country": "USA"
+        }
+      }
+    },
+    {
+      "orderId": "ORD-2025-008",
+      "orderDate": "2025-06-22T15:20:00Z",
+      "orderStatus": "cancelled",
+      "totalAmount": 0.00,
+      "currency": "USD",
+      "customer": {
+        "customerId": "CUST-008",
+        "firstName": "Jennifer",
+        "lastName": "Taylor",
+        "email": "jennifer.taylor@email.com",
+        "phone": "+1-555-0258",
+        "address": {
+          "street": "258 Spruce Street",
+          "city": "Boston",
+          "state": "MA",
+          "zipCode": "02101",
+          "country": "USA"
+        }
+      },
+      "items": [
+        {
+          "itemId": "ITEM-012",
+          "productName": "Fitness Tracker Watch",
+          "sku": "FTW-2025-001",
+          "quantity": 1,
+          "unitPrice": 149.99,
+          "totalPrice": 149.99,
+          "category": "Sports Technology",
+          "imageUrl": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400"
+        }
+      ],
+      "shipment": {
+        "shipmentId": "SHIP-008",
+        "carrier": "N/A",
+        "trackingNumber": "N/A",
+        "shippingMethod": "N/A",
+        "shippingCost": 0.00,
+        "estimatedDelivery": null,
+        "shippingAddress": {
+          "street": "258 Spruce Street",
+          "city": "Boston",
+          "state": "MA",
+          "zipCode": "02101",
+          "country": "USA"
+        }
+      }
+    },
+    {
+      "orderId": "ORD-2025-009",
+      "orderDate": "2025-06-23T12:00:00Z",
+      "orderStatus": "shipped",
+      "totalAmount": 139.98,
+      "currency": "USD",
+      "customer": {
+        "customerId": "CUST-009",
+        "firstName": "Christopher",
+        "lastName": "Anderson",
+        "email": "christopher.anderson@email.com",
+        "phone": "+1-555-0369",
+        "address": {
+          "street": "369 Willow Way",
+          "city": "Portland",
+          "state": "OR",
+          "zipCode": "97201",
+          "country": "USA"
+        }
+      },
+      "items": [
+        {
+          "itemId": "ITEM-013",
+          "productName": "Cross-Training Shoes",
+          "sku": "CTS-2025-001",
+          "quantity": 1,
+          "unitPrice": 109.99,
+          "totalPrice": 109.99,
+          "category": "Sports Footwear",
+          "imageUrl": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400"
+        },
+        {
+          "itemId": "ITEM-014",
+          "productName": "Gym Towel Set",
+          "sku": "GTS-2025-001",
+          "quantity": 1,
+          "unitPrice": 29.99,
+          "totalPrice": 29.99,
+          "category": "Sports Accessories",
+          "imageUrl": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400"
+        }
+      ],
+      "shipment": {
+        "shipmentId": "SHIP-009",
+        "carrier": "UPS",
+        "trackingNumber": "1Z999AA5555555555",
+        "shippingMethod": "Ground",
+        "shippingCost": 14.99,
+        "estimatedDelivery": "2025-06-28T17:00:00Z",
+        "shippingAddress": {
+          "street": "369 Willow Way",
+          "city": "Portland",
+          "state": "OR",
+          "zipCode": "97201",
+          "country": "USA"
+        }
+      }
+    },
+    {
+      "orderId": "ORD-2025-010",
+      "orderDate": "2025-06-24T17:30:00Z",
+      "orderStatus": "pending",
+      "totalAmount": 119.97,
+      "currency": "USD",
+      "customer": {
+        "customerId": "CUST-010",
+        "firstName": "Amanda",
+        "lastName": "Thompson",
+        "email": "amanda.thompson@email.com",
+        "phone": "+1-555-0741",
+        "address": {
+          "street": "741 Poplar Place",
+          "city": "Nashville",
+          "state": "TN",
+          "zipCode": "37201",
+          "country": "USA"
+        }
+      },
+      "items": [
+        {
+          "itemId": "ITEM-015",
+          "productName": "Wireless Bluetooth Earbuds",
+          "sku": "WBE-2025-001",
+          "quantity": 1,
+          "unitPrice": 79.99,
+          "totalPrice": 79.99,
+          "category": "Sports Technology",
+          "imageUrl": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400"
+        },
+        {
+          "itemId": "ITEM-016",
+          "productName": "Resistance Bands Set",
+          "sku": "RBS-2025-003",
+          "quantity": 2,
+          "unitPrice": 19.99,
+          "totalPrice": 39.98,
+          "category": "Fitness Equipment",
+          "imageUrl": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400"
+        }
+      ],
+      "shipment": {
+        "shipmentId": "SHIP-010",
+        "carrier": "FedEx",
+        "trackingNumber": "9999999999999999",
+        "shippingMethod": "Standard",
+        "shippingCost": 11.99,
+        "estimatedDelivery": "2025-06-29T18:00:00Z",
+        "shippingAddress": {
+          "street": "741 Poplar Place",
+          "city": "Nashville",
+          "state": "TN",
+          "zipCode": "37201",
+          "country": "USA"
+        }
+      }
+    }
+  ]
+}
