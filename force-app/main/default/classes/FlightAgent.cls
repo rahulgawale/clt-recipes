@@ -55,6 +55,7 @@ public class FlightAgent {
   }
 
   public class AvailableFlight {
+    @InvocableVariable
     public List<Flight> flights;
   }
 

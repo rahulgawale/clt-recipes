@@ -19,8 +19,15 @@
 
 .order-title h2 {
   color: #181818;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 0.25rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  border-left: 4px solid #28a745;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-size: 1.125rem;
+  letter-spacing: 0.025em;
 }
 
 .order-date-subtext {
@@ -32,6 +39,34 @@
 
 .order-total {
   text-align: right;
+}
+
+.order-actions {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+/* Custom button styling with green theme using LWC styling hooks */
+.claim-button {
+  --slds-c-button-brand-color-background: #28a745;
+  --slds-c-button-brand-color-border: #28a745;
+  --slds-c-button-brand-color-background-hover: #218838;
+  --slds-c-button-brand-color-border-hover: #1e7e34;
+  --slds-c-button-brand-color-background-active: #1e7e34;
+  --slds-c-button-brand-color-border-active: #1c7430;
+  --slds-c-button-brand-text-color: white;
+  --slds-c-button-radius-border: 0.5rem;
+  font-size: 0.875rem;
+}
+
+/* Additional fallback for claim button */
+.claim-button lightning-button {
+  --slds-c-button-brand-color-background: #28a745;
+  --slds-c-button-brand-color-border: #28a745;
+  --slds-c-button-brand-text-color: white;
 }
 
 .total-text {
@@ -74,10 +109,23 @@
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
-  padding: 1rem;
-  background: white;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   border-radius: 0.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+  position: relative;
+}
+
+.order-id-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  border-radius: 0.5rem 0.5rem 0 0;
 }
 
 .order-icon {
@@ -85,9 +133,17 @@
 }
 
 .order-id {
-  font-weight: 600;
+  font-weight: 700;
   color: #181818;
   flex-grow: 1;
+  font-size: 1.1rem;
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.05em;
+  font-family: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", monospace;
 }
 
 .order-status-badge {
@@ -197,6 +253,65 @@
 .item-price {
   align-self: flex-end;
   text-align: right;
+}
+
+.item-actions {
+  align-self: flex-end;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+/* Custom styling for item claim buttons using LWC styling hooks */
+.item-claim-button {
+  --slds-c-button-brand-color-background: #28a745;
+  --slds-c-button-brand-color-border: #28a745;
+  --slds-c-button-brand-color-background-hover: #218838;
+  --slds-c-button-brand-color-border-hover: #1e7e34;
+  --slds-c-button-brand-color-background-active: #1e7e34;
+  --slds-c-button-brand-color-border-active: #1c7430;
+  --slds-c-button-brand-text-color: white;
+  --slds-c-button-radius-border: 0.375rem;
+  font-size: 0.75rem;
+}
+
+/* Fallback for better browser support */
+.item-claim-button lightning-button {
+  --slds-c-button-brand-color-background: #28a745;
+  --slds-c-button-brand-color-border: #28a745;
+  --slds-c-button-brand-text-color: white;
+}
+
+.item-status-badge {
+  font-size: 0.75rem;
+}
+
+/* Status badge color customizations using LWC styling hooks */
+.item-status-badge[data-status="shipped"] {
+  --slds-c-badge-color-background: #d1ecf1;
+  --slds-c-badge-text-color: #0c5460;
+}
+
+.item-status-badge[data-status="arrived"] {
+  --slds-c-badge-color-background: #d4edda;
+  --slds-c-badge-text-color: #155724;
+}
+
+.item-status-badge[data-status="cancelled"] {
+  --slds-c-badge-color-background: #f8d7da;
+  --slds-c-badge-text-color: #721c24;
+}
+
+.item-status-badge[data-status="returned"] {
+  --slds-c-badge-color-background: #fff3cd;
+  --slds-c-badge-text-color: #856404;
+}
+
+.item-status-badge[data-status="processing"] {
+  --slds-c-badge-color-background: #e2e3e5;
+  --slds-c-badge-text-color: #383d41;
 }
 
 .price-text {

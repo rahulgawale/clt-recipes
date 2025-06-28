@@ -10,7 +10,6 @@
 
     <targetConfigs>
         <targetConfig targets="lightning__AgentforceInput">
-            <!-- This config links lwc component with LightningType -->
             <targetType name="c__flightFilter" />
         </targetConfig>
     </targetConfigs>

@@ -1,9 +1,10 @@
-import { LightningElement, track } from "lwc";
+import { LightningElement, track, api } from "lwc";
+import { ShowToastEvent } from "lightning/platformShowToastEvent";
 
 export default class OrderDetails extends LightningElement {
   @track activeTab = "items";
 
-  order = {
+  @api order = {
     orderId: "ORD-2025-001",
     orderDate: "2025-06-15T10:30:00Z",
     orderStatus: "shipped",
@@ -70,8 +71,47 @@ export default class OrderDetails extends LightningElement {
     this.activeTab = event.target.dataset.tab;
   }
 
+  handleFullOrderClaim() {
+    this.showToast(
+      "Claim Initiated",
+      `Full order claim has been initiated for order ${this.order.orderId}`,
+      "success"
+    );
+  }
+
+  handleItemClaim(event) {
+    const itemId = event.target.dataset.itemId;
+    const selectedItem = this.order.items.find(
+      (item) => item.itemId === itemId
+    );
+    this.showToast(
+      "Item Claim Initiated",
+      `Claim has been initiated for ${selectedItem.productName} (${itemId})`,
+      "success"
+    );
+  }
+
+  showToast(title, message, variant) {
+    const event = new ShowToastEvent({
+      title: title,
+      message: message,
+      variant: variant,
+      mode: "dismissable"
+    });
+    this.dispatchEvent(event);
+  }
+
   get formattedOrderDate() {
     const date = new Date(this.order.orderDate);
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
+  }
+
+  get formattedEstimatedDelivery() {
+    const date = new Date(this.order.shipment.estimatedDelivery);
     return date.toLocaleDateString("en-US", {
       year: "numeric",
       month: "long",

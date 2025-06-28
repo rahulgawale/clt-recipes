@@ -1,0 +1,72 @@
+<template>
+  <div class="finder-container">
+    <!-- Search Form Section -->
+    <div class="search-form-section">
+      <div class="search-form-card">
+        <div class="form-header">
+          <h3 class="form-title">Search Order</h3>
+          <p class="form-subtitle">At least one field is required</p>
+        </div>
+
+        <div class="input-container">
+          <div class="input-group">
+            <lightning-input
+              label="Order Number"
+              type="text"
+              value={orderNumber}
+              onchange={handleOrderNumberChange}
+              placeholder="e.g., ORD-2025-001"
+              data-id="orderNumber"
+              class="search-input order-input"
+            ></lightning-input>
+          </div>
+
+          <div class="input-divider">
+            <span class="divider-text">OR</span>
+          </div>
+
+          <div class="input-group">
+            <lightning-input
+              label="Email Address"
+              type="email"
+              value={email}
+              onchange={handleEmailChange}
+              placeholder="e.g., john.smith@email.com"
+              data-id="email"
+              class="search-input email-input"
+            ></lightning-input>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <lightning-button
+            label="Clear"
+            variant="neutral"
+            onclick={handleClear}
+            class="clear-button"
+            disabled={isLoading}
+          ></lightning-button>
+          <lightning-button
+            label={searchButtonLabel}
+            variant="brand"
+            onclick={handleSearch}
+            class="search-button"
+            disabled={searchButtonDisabled}
+          ></lightning-button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loading Section -->
+    <template if:true={isLoading}>
+      <div class="loading-section">
+        <lightning-spinner
+          alternative-text="Searching for order..."
+          size="medium"
+          class="search-spinner"
+        ></lightning-spinner>
+        <p class="loading-text">Searching for your order...</p>
+      </div>
+    </template>
+  </div>
+</template>

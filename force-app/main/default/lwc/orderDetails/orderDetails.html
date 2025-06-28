@@ -7,8 +7,14 @@
           <h2 class="slds-text-heading_medium">Order {order.orderId}</h2>
           <p class="order-date-subtext">{formattedOrderDate}</p>
         </div>
-        <div class="order-total">
+        <div class="order-actions">
           <span class="total-text">Total ${order.totalAmount}</span>
+          <lightning-button
+            label="Start Claim"
+            variant="brand"
+            class="claim-button"
+            onclick={handleFullOrderClaim}
+          ></lightning-button>
         </div>
       </div>
       <div class="order-status-section">
@@ -62,21 +68,31 @@
               <div class="item-info">
                 <div class="item-header">
                   <h3 class="item-name">{item.productName}</h3>
-                  <span class="item-status-tag {item.status}"
-                    >{item.status}</span
-                  >
+                  <lightning-badge
+                    label={item.status}
+                    class="item-status-badge"
+                    data-status={item.status}
+                  ></lightning-badge>
                 </div>
                 <div class="item-meta">
                   <span class="item-sku">SKU: {item.sku}</span>
                   <span class="item-quantity">Qty: {item.quantity}</span>
                 </div>
               </div>
-              <div class="item-price">
+              <div class="item-actions">
                 <lightning-formatted-number
                   value={item.unitPrice}
                   currency-code={order.currency}
                   class="price-text"
                 ></lightning-formatted-number>
+                <lightning-button
+                  label="Start Claim"
+                  variant="brand"
+                  size="small"
+                  class="item-claim-button"
+                  data-item-id={item.itemId}
+                  onclick={handleItemClaim}
+                ></lightning-button>
               </div>
             </div>
           </div>
@@ -109,7 +125,7 @@
               </p>
               <p>
                 <strong>Estimated Delivery:</strong>
-                {order.shipment.estimatedDelivery}
+                {formattedEstimatedDelivery}
               </p>
             </div>
           </div>

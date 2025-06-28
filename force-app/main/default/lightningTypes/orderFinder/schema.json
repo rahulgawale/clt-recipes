@@ -1,0 +1,5 @@
+{
+  "title": "Order Request",
+  "description": "Find order details",
+  "lightning:type": "@apexClassType/c__OrderAgent$OrderRequest"
+}
