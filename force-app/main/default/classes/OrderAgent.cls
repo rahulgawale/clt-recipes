@@ -9,6 +9,9 @@ public with sharing class OrderAgent {
     }
 
     OrderRequest request = req[0];
+    OrderFilter filter = request.orderSearchFilter;
+
+    System.debug('Order Filter: ' + filter);
 
     // For simplicity we are using order json.
     // in a real-world scenario, you would use SF OMS objects or
@@ -17,11 +20,13 @@ public with sharing class OrderAgent {
       SELECT Id, Order_Number__c, Customer_Email__c, Order_Raw_Payload__c
       FROM Order
       WHERE
-        Order_Number__c = :request.orderNumber
-        OR Customer_Email__c = :request.customerEmail
+        Order_Number__c = :filter.orderNumber
+        OR Customer_Email__c = :filter.customerEmail
       ORDER BY CreatedDate DESC
       LIMIT 1
     ];
+
+    System.debug('Order Object: ' + orderObj);
 
     if (orderObj == null) {
       return new List<OrderResponse>();
@@ -41,9 +46,14 @@ public with sharing class OrderAgent {
 
   public class OrderRequest {
     @InvocableVariable
-    public String customerEmail;
+    public OrderFilter orderSearchFilter;
+  }
+
+  public class OrderFilter {
     @InvocableVariable
     public String orderNumber;
+    @InvocableVariable
+    public String customerEmail;
   }
 
   public class OrderDetails {
@@ -65,6 +75,4 @@ public with sharing class OrderAgent {
     @InvocableVariable
     public OrderDetails order;
   }
-
-  // Remove unused Orders class as it references flights instead of orders
 }

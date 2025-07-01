@@ -6,5 +6,11 @@
         <target>lightning__RecordPage</target>
         <target>lightning__AppPage</target>
         <target>lightning__HomePage</target>
+        <target>lightning__AgentforceOutput</target>
     </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AgentforceOutput">
+            <sourceType name="c__orderDetails" />
+        </targetConfig>
+    </targetConfigs>
 </LightningComponentBundle>

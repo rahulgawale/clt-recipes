@@ -2,7 +2,7 @@
   "editor": {
     "componentOverrides": {
       "$": {
-        "definition": "c/orderFinder"
+        "definition": "c/orderFilter"
       }
     }
   }

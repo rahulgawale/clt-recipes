@@ -1,0 +1,5 @@
+{
+  "title": "Order Filter",
+  "description": "Find order using filter",
+  "lightning:type": "@apexClassType/c__OrderAgent$OrderFilter"
+}

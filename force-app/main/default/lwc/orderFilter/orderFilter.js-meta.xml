@@ -10,7 +10,7 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__AgentforceInput">
-            <targetType name="c__orderFinder" />
+            <targetType name="c__orderFilter" />
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>
