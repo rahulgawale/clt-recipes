@@ -1,4 +1,4 @@
-import { LightningElement, track } from "lwc";
+import { LightningElement, track, api } from "lwc";
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
 
 export default class OrderFinder extends LightningElement {
@@ -7,13 +7,42 @@ export default class OrderFinder extends LightningElement {
   @track isLoading = false;
   @track isSubmitted = false;
 
-  // Handle input changes
-  handleOrderNumberChange(event) {
-    this.orderNumber = event.target.value;
+  @api
+  get value() {
+    return this._value;
+  }
+  /**
+   * @param  {} value
+   */
+  set value(value) {
+    this._value = value;
   }
 
-  handleEmailChange(event) {
-    this.email = event.target.value;
+  connectedCallback() {
+    // Initialize values if needed
+    if (this.value) {
+      this.orderNumber = this.value.orderNumber || "";
+      this.email = this.value.email || "";
+    }
+  }
+
+  handleInputChange(event) {
+    event.stopPropagation();
+    const { name, value } = event.target;
+    this[name] = value;
+
+    if (this.validateInputs()) {
+      this.dispatchEvent(
+        new CustomEvent("valuechange", {
+          detail: {
+            value: {
+              orderNumber: this.orderNumber,
+              email: this.email
+            }
+          }
+        })
+      );
+    }
   }
 
   // Validate that at least one field is filled
